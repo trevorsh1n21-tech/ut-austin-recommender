@@ -76,8 +76,7 @@ class RecommendationEngine:
 # 2. FLASK APP SETUP
 # ============================================
 app = Flask(__name__)
-CORS(app, resources={r"/api/*")
-
+CORS(app, resources={r"/api/*":{origins: "*"}})
 @app.route('/api/recommend', methods=['POST'])
 def get_recommendations():
     try:
